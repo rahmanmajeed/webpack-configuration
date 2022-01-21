@@ -1,0 +1,1 @@
+document.querySelector('#root').innerHTML=`<h1>This is from HTML</h1>`
