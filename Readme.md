@@ -87,3 +87,47 @@ yarn add html-webpack-plugin
    |-public
    | |-index.html
    |-src
+10. add `react` & `react-dom` to project-
+
+```sh
+yarn add react react-dom --save
+
+or
+
+npm install react react-dom --save
+```
+
+11. import `react` & `react-dom` into `src/index.js` file
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(<h1>React DOM'</h1>, document.getElementById("root"));
+```
+
+12. adding `babel` to `webpack`
+
+```sh
+yarn add @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/preset-react babel-loader --save
+```
+
+13. in `webpack.config.js`
+
+```javascript
+    module: {
+        rules: [
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-react', '@babel/preset-env'],
+                plugins: ['@babel/plugin-transform-runtime'],
+              },
+            },
+          },
+        ],
+      },
+```
