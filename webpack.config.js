@@ -10,16 +10,31 @@ module.exports = {
     module: {
         rules: [
           {
+            // "test" identify which files & folders should be transformed
             test: /\.m?js$/,
             exclude: /node_modules/,
+            // "use" indicate which loaders should be used for transforming. 
             use: {
               loader: 'babel-loader',
               options: {
                 presets: ['@babel/preset-react', '@babel/preset-env'],
                 plugins: ['@babel/plugin-transform-runtime'],
               },
-            },
+            }, 
           },
+          //configure css & style loader
+          {
+            test: /\.css$/,
+            use:['style-loader', 'css-loader']
+
+          },
+
+          //configure sass loader 
+          {
+            test: /\.scss$/,
+            use:['style-loader', 'css-loader', 'sass-loader']
+          },
+          // asset loading
         ],
       },
 

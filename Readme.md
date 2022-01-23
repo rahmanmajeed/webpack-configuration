@@ -131,3 +131,35 @@ yarn add @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/pr
         ],
       },
 ```
+
+14. add `css-loader` & `style-loader` to project-
+
+```sh
+yarn add css-loader style-loader
+```
+
+15. configure loader in `webpack.config.js`
+
+```javascript
+ //configure css & style loader
+  {
+    test: /\.css$/,
+    use:['style-loader', 'css-loader']
+
+  }
+```
+
+16. add `sass-loader` & `node-sass` -
+
+```sh
+yarn add sass-loader node-sass --save
+```
+
+17. configure loader in `webpack.config.js` file
+
+```javascript
+ {
+   test: /\.scss$/,
+   use:['style-loader', 'css-loader', 'sass-loader']
+ },
+```
