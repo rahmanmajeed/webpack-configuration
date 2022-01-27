@@ -163,3 +163,29 @@ yarn add sass-loader node-sass --save
    use:['style-loader', 'css-loader', 'sass-loader']
  },
 ```
+
+18. configure `html-loader` to webpack
+
+```sh
+npm install --save-dev html-loader
+yarn add -D html-loader
+```
+
+```javascript
+{
+  test: /\.html$/i,
+  use: ["html-loader"],
+},
+```
+
+19. add asset configuration to `webpack.config.js` file -
+
+```javascript
+{
+  test: /\.(png|jpe?g|gif|svg)$/i,
+  type: "asset/resource",// equivalent to `file-loader`
+  generator: { // generate separate assets folder in `dist` output folder
+    filename: "assets/[name][ext][query]",
+  },
+},
+```

@@ -4,9 +4,9 @@
   "description": "- Initialize [package.json] using.",
   "main": "index.js",
   "scripts": {
-    "test": "webpack serve",
-    "start": "webpack serve",
-    "build": "webpack"
+    "test": "webpack serve  --hot --open",
+    "start": "webpack serve  --hot",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
   "author": "",
